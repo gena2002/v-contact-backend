@@ -3,9 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
 const url = require('url');
-const https = require('https');
-const fs = require('fs');
-const PORT = process.env.PORT || 8080;
+
+const PORT = process.env.PORT || 5000;
 
 
 const app = express();
@@ -83,11 +82,6 @@ app.post('/delete', (req, res) => {
 })
 app.listen(PORT)
 
-const options = {
-    cert: fs.readFileSync('./sslcert/demo.crt'),
-    key: fs.readFileSync('./sslcert/demo.key')
-};
-https.createServer(options, app).listen(8443);
 
 // //create table
 // // sql = `CREATE TABLE contacts(id INTEGER PRIMARY KEY, name, phone, email, tag)`;
