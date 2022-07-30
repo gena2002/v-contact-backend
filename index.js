@@ -18,7 +18,7 @@ const db = new sqlite3.Database('./test.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) return console.error(err.message);
 });
 app.get('/', (req, res) => {
-   res.send('<h1>Welcome to server 2</h1>')
+   res.send('<h1>Welcome to server 3</h1>')
 })
 app.post('/add', (req, res) => {
     try {
