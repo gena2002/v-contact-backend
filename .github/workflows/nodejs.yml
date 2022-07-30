@@ -29,4 +29,4 @@ jobs:
       - run: cd /root/server/v-contact-backend
       - run: git pull
       - run: npm install
-      - run: pm2 restart index.js
+#      - run: pm2 restart index.js
