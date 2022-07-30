@@ -26,14 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: cd /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend; npm install;
-      - run: pm2 stop /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend/index.js;
-      - run: pm2 start /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend/index.js;
-
-#  pm2 start index.js
-#      - run: cd /root/server/v-contact-backend; pm2 stop index.js
-#      - run: rm -rf /root/server/v-contact-backend
-#      - run: mv /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend /root/server/v-contact-backend
-#      - run: cd /root/server/v-contact-backend;
-#      npm install
-#      pm2 start index.js
+      - run: mv /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend /root/server/v-contact-backend
+      - run: cd /root/server/v-contact-backend; npm install
+      - run: pm2 stop /root/server/v-contact-backend/index.js
+      - run: pm2 start /root/server/v-contact-backend/index.js
