@@ -28,6 +28,6 @@ jobs:
           cache: 'npm'
       - run: npm install
       - run: rm -rf /root/server/v-contact-backend; mkdir /root/server/v-contact-backend
-      - run: mv /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend /root/server/v-contact-backend
+      - run: mv /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend /root/server
       - run: pm2 stop /root/server/v-contact-backend/index.js
       - run: pm2 start /root/server/v-contact-backend/index.js
