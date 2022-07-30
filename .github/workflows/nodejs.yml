@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: mv /root/actions-runner-backend/_work/v-contact-backend/v-contact-backend /root/server/v-contact-backend
       - run: cd /root/server/v-contact-backend
-      - run: git pull
       - run: npm install
-#      - run: pm2 restart index.js
+      - run: cd /root/server/v-contact-backend; pm2 restart index.js
